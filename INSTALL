@@ -1,0 +1,9 @@
+Building Quatloo
+
+See doc/readme-qt.rst for instructions on building Quatloo-Qt,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of Quatloo.
+
+See doc/build-*.txt for instructions on building quatlood,
+the intended-for-services, no-graphical-interface, reference
+implementation of Quatloo.

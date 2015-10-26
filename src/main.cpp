@@ -1093,9 +1093,15 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 		nSubsidy = 850500 * COIN; //first block premine less than 1%  0.8505%
 		
 	}
-    // Subsidy is cut in half every 840000 blocks, which will occur approximately every 4 years
-    nSubsidy >>= (nHeight / 934400); // Litecoin: 840k blocks in ~4 years Quatloo: 934.4k blocks ~ 4 years
-
+    if(nHeight >= 268840) // (2.25 min intervals in 20 days) + 256036 (block height on 10/25/15 at 10pm -- so around 11/14/2015 halving will occur
+	{
+	     //change of the first halving of block reward at block 268840
+		nSubsidy = 8.505 * COIN;
+	
+	}
+    // Subsidy is cut in half every 467200 blocks, which will occur approximately every 2 years
+    //nSubsidy >>= (nHeight / 934400); //  Quatloo: 934.4k blocks ~ 4 years
+	nSubsidy >>= (nHeight / 467200); //  Quatloo: 467.2k blocks ~ 2 years
     return nSubsidy + nFees;
 }
 
